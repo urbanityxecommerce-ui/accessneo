@@ -1,4 +1,3 @@
-
 import { HeroSection } from "@/components/hero-section";
 import { PaymentSection } from "@/components/payment-section";
 import { VerificationForm } from "@/components/verification-form";
@@ -17,11 +16,13 @@ export default function Home() {
 
       <HeroSection />
       
-      <div className="space-y-12">
-        <PaymentSection />
-        
-        <div className="bg-primary/5 py-12">
-          <VerificationForm />
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Consolidated Steps 1 & 2 */}
+        <div className="bg-primary/5 rounded-3xl p-6 md:p-12 border border-primary/10 mb-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <PaymentSection />
+            <VerificationForm />
+          </div>
         </div>
         
         <UtrGuide />

@@ -76,7 +76,7 @@ export function VerificationForm() {
 
   if (isSuccess) {
     return (
-      <div className="max-w-md mx-auto py-12 px-4 animate-in fade-in zoom-in duration-500">
+      <div className="animate-in fade-in zoom-in duration-500 w-full">
         <Card className="bg-card border-primary shadow-[0_0_30px_rgba(13,124,242,0.15)] text-center overflow-hidden">
           <div className="h-2 bg-primary w-full" />
           <CardContent className="p-10 flex flex-col items-center">
@@ -99,7 +99,7 @@ export function VerificationForm() {
   }
 
   return (
-    <div className="max-w-md mx-auto py-12 px-4">
+    <div className="w-full">
       <Card className="bg-card border-primary/20 shadow-xl overflow-hidden">
         <CardHeader className="bg-primary/5 border-b border-primary/10">
           <CardTitle className="text-xl font-headline font-bold flex items-center gap-2">
