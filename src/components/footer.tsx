@@ -19,13 +19,13 @@ export function Footer() {
         <div className="flex flex-col items-center md:items-end gap-3">
           <p className="text-[10px] text-muted-foreground font-black tracking-widest uppercase">Contact Admin</p>
           <a 
-            href="https://instagram.com/n_sider_neo" 
+            href="https://instagram.com/n_sider_neo_" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all text-sm font-bold group shadow-lg"
           >
             <Instagram className="w-5 h-5 text-pink-500 group-hover:scale-110 transition-transform" />
-            @n_sider_neo
+            @n_sider_neo_
           </a>
         </div>
       </div>
