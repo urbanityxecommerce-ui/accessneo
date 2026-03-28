@@ -1,10 +1,9 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Glitch Access - Premium VIP Earning Community',
-  description: 'Join the exclusive Glitch Access community for grey hat loopholes and tricks.',
+  title: 'Glitch Access - Premium Strategic Insights Network',
+  description: 'Join the exclusive Glitch Access network for high-level market strategies and premium insider insights.',
 };
 
 export default function RootLayout({

@@ -1,4 +1,3 @@
-
 import { Instagram, Send } from "lucide-react";
 
 export function Footer() {
@@ -11,12 +10,12 @@ export function Footer() {
           </div>
           <div>
             <span className="text-xl font-headline font-bold tracking-tight">GLITCH <span className="text-primary">ACCESS</span></span>
-            <p className="text-xs text-muted-foreground tracking-widest uppercase font-medium">Premium VIP Earning</p>
+            <p className="text-xs text-muted-foreground tracking-widest uppercase font-medium">Strategic Insights Network</p>
           </div>
         </div>
 
         <div className="flex flex-col items-center md:items-end gap-2">
-          <p className="text-sm text-muted-foreground">If you face issues, DM on Instagram:</p>
+          <p className="text-sm text-muted-foreground">For institutional inquiries or support:</p>
           <a 
             href="https://instagram.com/n_sider_neo" 
             target="_blank" 
@@ -30,7 +29,7 @@ export function Footer() {
       </div>
       
       <div className="mt-12 text-center text-xs text-muted-foreground/40">
-        &copy; {new Date().getFullYear()} Glitch Access Community. All rights reserved. Professional Use Only.
+        &copy; {new Date().getFullYear()} Glitch Access Network. All rights reserved. Intellectual Property of Glitch Access.
       </div>
     </footer>
   );

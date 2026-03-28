@@ -1,4 +1,3 @@
-
 import { ShieldCheck, Zap } from "lucide-react";
 
 export function HeroSection() {
@@ -8,27 +7,27 @@ export function HeroSection() {
       
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-6 animate-pulse">
         <Zap className="w-3 h-3 fill-primary" />
-        EXCLUSIVE ACCESS
+        ELITE NETWORK
       </div>
 
       <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6 tracking-tight glitch-text animate-glitch-slow">
-        Get VIP Access to the <br />
-        <span className="text-primary italic">Earning Glitch</span>
+        Master the <br />
+        <span className="text-primary italic">Strategic Advantage</span>
       </h1>
       
       <p className="max-w-xl text-muted-foreground text-lg mb-8">
-        Join our exclusive community for <span className="text-foreground font-semibold">₹25/month</span>. Access grey-hat loopholes, darkweb exclusive earning methods, and advanced tricks reserved for the elite.
+        Gain membership to our private network for <span className="text-foreground font-semibold">₹25/month</span>. Access advanced market strategies, high-yield insights, and sophisticated financial frameworks.
       </p>
 
       <div className="flex items-center gap-4 text-sm text-muted-foreground">
         <div className="flex items-center gap-1.5">
           <ShieldCheck className="w-4 h-4 text-secondary" />
-          <span>Secure Verification</span>
+          <span>Professional Verification</span>
         </div>
         <div className="w-1 h-1 rounded-full bg-border" />
         <div className="flex items-center gap-1.5">
           <Zap className="w-4 h-4 text-secondary" />
-          <span>Instant Access</span>
+          <span>Priority Onboarding</span>
         </div>
       </div>
     </section>
