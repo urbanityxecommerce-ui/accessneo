@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'GLITCH - Advanced Architecture | Deep Network Access',
-  description: 'Explore the hidden layers of digital infrastructure. Exclusive protocols, unconventional insights, and deep web architecture.',
+  title: 'GLITCH - Private Node | Access Undocumented Protocols',
+  description: 'Connect to the shadow network. Explore undocumented digital architecture and exclusive high-level protocols.',
 };
 
 export default function RootLayout({

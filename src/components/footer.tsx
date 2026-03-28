@@ -1,4 +1,4 @@
-import { Instagram, Ghost } from "lucide-react";
+import { Instagram, Ghost, Shield } from "lucide-react";
 
 export function Footer() {
   return (
@@ -6,16 +6,16 @@ export function Footer() {
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-            <Ghost className="text-white w-6 h-6" />
+            <Shield className="text-white w-6 h-6" />
           </div>
           <div>
-            <span className="text-xl font-headline font-bold tracking-tight">GLITCH <span className="text-primary">CORE</span></span>
-            <p className="text-xs text-muted-foreground tracking-widest uppercase font-medium">Deep Infrastructure Network</p>
+            <span className="text-xl font-headline font-bold tracking-tight uppercase">GLITCH <span className="text-primary italic">SHADOW</span></span>
+            <p className="text-xs text-muted-foreground tracking-widest uppercase font-medium font-mono">Node ID: 6205-6621-85</p>
           </div>
         </div>
 
         <div className="flex flex-col items-center md:items-end gap-2">
-          <p className="text-sm text-muted-foreground">For network support or collaboration:</p>
+          <p className="text-sm text-muted-foreground">Node Admin / Support:</p>
           <a 
             href="https://instagram.com/n_sider_neo" 
             target="_blank" 
@@ -28,8 +28,8 @@ export function Footer() {
         </div>
       </div>
       
-      <div className="mt-12 text-center text-xs text-muted-foreground/30">
-        &copy; {new Date().getFullYear()} Glitch Advanced Architecture. Private Access. Confidential.
+      <div className="mt-12 text-center text-[10px] text-muted-foreground/30 font-mono uppercase tracking-[0.2em]">
+        &copy; {new Date().getFullYear()} Private Node Access. All Protocols Restricted.
       </div>
     </footer>
   );

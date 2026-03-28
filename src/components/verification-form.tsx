@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ShieldCheck, Loader2, CheckCircle2, ExternalLink } from "lucide-react";
+import { ShieldCheck, Loader2, CheckCircle2, ExternalLink, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -68,7 +68,7 @@ export function VerificationForm() {
       }
     } catch (error) {
       console.error(error);
-      alert("Something went wrong. Please check your connection or contact support on Instagram.");
+      alert("Activation failed. Contact node support on Instagram.");
     } finally {
       setIsSubmitting(false);
     }
@@ -83,13 +83,13 @@ export function VerificationForm() {
             <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
               <ShieldCheck className="w-12 h-12 text-primary" />
             </div>
-            <h2 className="text-3xl font-headline font-bold mb-4">VERIFIED</h2>
+            <h2 className="text-3xl font-headline font-bold mb-4">ACCESS GRANTED</h2>
             <p className="text-muted-foreground mb-8">
-              Your payment has been submitted. You can now join the private Telegram channel.
+              Your credentials have been submitted. You can now join the private shadow channel.
             </p>
             <Button asChild size="lg" className="w-full font-bold h-14 text-lg shadow-lg shadow-primary/25">
               <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
-                JOIN CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
+                JOIN PRIVATE NODE <ExternalLink className="ml-2 w-5 h-5" />
               </a>
             </Button>
           </CardContent>
@@ -103,8 +103,8 @@ export function VerificationForm() {
       <Card className="bg-card border-primary/20 shadow-xl overflow-hidden">
         <CardHeader className="bg-primary/5 border-b border-primary/10">
           <CardTitle className="text-xl font-headline font-bold flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-primary" />
-            02. Submit Details
+            <Terminal className="w-5 h-5 text-primary" />
+            02. Initiate Activation
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -115,11 +115,11 @@ export function VerificationForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Telegram Username</FormLabel>
+                    <FormLabel>Telegram Identity (@)</FormLabel>
                     <FormControl>
-                      <Input placeholder="@your_username" {...field} className="bg-background/50" />
+                      <Input placeholder="@username" {...field} className="bg-background/50 font-mono" />
                     </FormControl>
-                    <FormDescription>Your username on Telegram for access.</FormDescription>
+                    <FormDescription>Used for granting access to the private network.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -129,11 +129,11 @@ export function VerificationForm() {
                 name="utr"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>12-Digit UTR Number</FormLabel>
+                    <FormLabel>12-Digit Activation Key (UTR)</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter 12 digits" maxLength={12} {...field} className="bg-background/50" />
+                      <Input placeholder="Enter 12-digit number" maxLength={12} {...field} className="bg-background/50 font-mono" />
                     </FormControl>
-                    <FormDescription>Found in your UPI payment history details.</FormDescription>
+                    <FormDescription>Found in your UPI transaction details.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -146,10 +146,10 @@ export function VerificationForm() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    VERIFYING...
+                    PROCESSING NODE...
                   </>
                 ) : (
-                  "Verify & Join Channel"
+                  "ACTIVATE ACCESS"
                 )}
               </Button>
             </form>
