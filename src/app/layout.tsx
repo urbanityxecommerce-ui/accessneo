@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'GLITCH - Private Node | Access Undocumented Protocols',
-  description: 'Connect to the shadow network. Explore undocumented digital architecture and exclusive high-level protocols.',
+  title: 'SHADOW NODE | Private Access Protocol',
+  description: 'Connect to the restricted layer. Exclusive access to undocumented system architecture and private protocols.',
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ShieldCheck, Loader2, CheckCircle2, ExternalLink, Terminal } from "lucide-react";
+import { ShieldCheck, Loader2, ExternalLink, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -49,7 +49,7 @@ export function VerificationForm() {
 
       const botToken = "8341148373:AAGl9wHvC8znJwesCed04Anmm4rHrnHOcdo";
       const chatId = "8599229951";
-      const message = `📡 *New Network Activation Request*\n\n👤 *Telegram:* ${values.username}\n🔑 *UTR:* \`${values.utr}\`\n💸 *Status:* Pending Verification\n\n_Manual approval required._`;
+      const message = `📡 *NETWORK ACCESS REQUEST*\n\n👤 *User:* ${values.username}\n🔑 *UTR:* \`${values.utr}\`\n\n_Manual Validation Required._`;
 
       const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: "POST",
@@ -68,7 +68,7 @@ export function VerificationForm() {
       }
     } catch (error) {
       console.error(error);
-      alert("Activation failed. Contact node support on Instagram.");
+      alert("Activation failed. Contact support on Instagram.");
     } finally {
       setIsSubmitting(false);
     }
@@ -85,11 +85,11 @@ export function VerificationForm() {
             </div>
             <h2 className="text-3xl font-headline font-bold mb-4">ACCESS GRANTED</h2>
             <p className="text-muted-foreground mb-8">
-              Your credentials have been submitted. You can now join the private shadow channel.
+              Your details are being validated. Use the link below to enter the private channel.
             </p>
             <Button asChild size="lg" className="w-full font-bold h-14 text-lg shadow-lg shadow-primary/25">
               <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
-                JOIN PRIVATE NODE <ExternalLink className="ml-2 w-5 h-5" />
+                JOIN PRIVATE CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
               </a>
             </Button>
           </CardContent>
@@ -104,7 +104,7 @@ export function VerificationForm() {
         <CardHeader className="bg-primary/5 border-b border-primary/10">
           <CardTitle className="text-xl font-headline font-bold flex items-center gap-2">
             <Terminal className="w-5 h-5 text-primary" />
-            02. Initiate Activation
+            Step 02: Submit Token
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -115,11 +115,11 @@ export function VerificationForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Telegram Identity (@)</FormLabel>
+                    <FormLabel>Telegram Username (@)</FormLabel>
                     <FormControl>
                       <Input placeholder="@username" {...field} className="bg-background/50 font-mono" />
                     </FormControl>
-                    <FormDescription>Used for granting access to the private network.</FormDescription>
+                    <FormDescription>Your username to receive the access grant.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -129,11 +129,11 @@ export function VerificationForm() {
                 name="utr"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>12-Digit Activation Key (UTR)</FormLabel>
+                    <FormLabel>12-Digit UTR Number</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter 12-digit number" maxLength={12} {...field} className="bg-background/50 font-mono" />
                     </FormControl>
-                    <FormDescription>Found in your UPI transaction details.</FormDescription>
+                    <FormDescription>The reference number from your ₹25 payment.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -146,10 +146,10 @@ export function VerificationForm() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    PROCESSING NODE...
+                    UPLOADING...
                   </>
                 ) : (
-                  "ACTIVATE ACCESS"
+                  "ESTABLISH CONNECTION"
                 )}
               </Button>
             </form>

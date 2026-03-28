@@ -4,26 +4,26 @@ export function UtrGuide() {
   const steps = [
     {
       icon: <History className="w-5 h-5 text-primary" />,
-      title: "Review Logs",
-      desc: "Go to your UPI app's transaction history after the contribution."
+      title: "Open History",
+      desc: "Go to your UPI app's transaction history."
     },
     {
       icon: <Search className="w-5 h-5 text-primary" />,
-      title: "Identify Payload",
-      desc: "Find the ₹25 transaction to extract the activation data."
+      title: "Find Entry",
+      desc: "Locate the ₹25 transaction to the node address."
     },
     {
       icon: <ClipboardCheck className="w-5 h-5 text-primary" />,
-      title: "Extract UTR",
-      desc: "Copy the 12-digit number labeled as UTR or Ref No."
+      title: "Copy UTR",
+      desc: "Extract the 12-digit number (UTR or Ref No)."
     }
   ];
 
   return (
     <section className="px-4 py-12 max-w-4xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-2xl font-headline font-bold mb-2 tracking-tight">Access Protocol</h2>
-        <p className="text-muted-foreground">How to correctly activate your connection to the node.</p>
+        <h2 className="text-2xl font-headline font-bold mb-2 tracking-tight">Validation Protocol</h2>
+        <p className="text-muted-foreground">How to correctly extract your entry token.</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">

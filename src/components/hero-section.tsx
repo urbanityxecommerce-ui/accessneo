@@ -1,4 +1,4 @@
-import { ShieldCheck, Terminal, Eye, Zap } from "lucide-react";
+import { ShieldCheck, Terminal, Zap, Lock } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -6,23 +6,23 @@ export function HeroSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-6 animate-pulse">
-        <ShieldCheck className="w-3 h-3" />
-        ENCRYPTED CONNECTION ESTABLISHED
+        <Lock className="w-3 h-3" />
+        SECURE NODE CONNECTION ACTIVE
       </div>
 
-      <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6 tracking-tight glitch-text">
-        ACCESS <br />
-        <span className="text-primary italic">THE UNDOCUMENTED</span>
+      <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6 tracking-tight glitch-text uppercase">
+        THE <span className="text-primary italic">SHADOW</span> <br />
+        LAYER
       </h1>
       
       <p className="max-w-xl text-muted-foreground text-lg mb-8">
-        Gain entry to private digital protocols and exclusive grey-hat strategies for just <span className="text-foreground font-semibold">₹25/month</span>.
+        Gain entry to the private channel. Access <span className="text-foreground font-semibold">undocumented bypasses</span> and exclusive system-level flows for just <span className="text-foreground font-semibold">₹25/month</span>.
       </p>
 
       <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
         <div className="flex items-center gap-1.5">
           <Zap className="w-4 h-4 text-secondary" />
-          <span>Shadow Protocols</span>
+          <span>System Bypasses</span>
         </div>
         <div className="hidden sm:block w-1 h-1 rounded-full bg-border" />
         <div className="flex items-center gap-1.5">
@@ -32,7 +32,7 @@ export function HeroSection() {
         <div className="hidden sm:block w-1 h-1 rounded-full bg-border" />
         <div className="flex items-center gap-1.5">
           <Terminal className="w-4 h-4 text-secondary" />
-          <span>Hidden Architecture</span>
+          <span>Hidden Logic</span>
         </div>
       </div>
     </section>
