@@ -25,8 +25,7 @@ export function PaymentSection() {
           STEP 01: <span className="text-primary">PAYMENT</span>
         </h2>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Pay <span className="text-foreground font-bold underline decoration-primary">₹25 Monthly</span> to get full access to our Private Channel. 
-          Use the UPI ID below to complete your payment.
+          Pay <span className="text-foreground font-bold underline decoration-primary">₹25 Monthly</span> for full access to Grey Hat Tricks, Private Ebooks, and Restricted Methods.
         </p>
       </div>
 
@@ -49,7 +48,7 @@ export function PaymentSection() {
             <span className="text-primary font-black text-lg">₹</span>
           </div>
           <div>
-            <p className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase mb-0.5">MONTHLY PASS</p>
+            <p className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase mb-0.5">MONTHLY ACCESS</p>
             <p className="text-xl font-headline font-black text-foreground">₹25.00 / Month</p>
           </div>
         </div>
@@ -60,7 +59,7 @@ export function PaymentSection() {
           <ChevronRight className="w-4 h-4 text-secondary" />
         </div>
         <p className="text-xs text-muted-foreground italic leading-relaxed">
-          After payment, copy the <span className="text-foreground font-bold underline decoration-primary/50">12-Digit UTR Number</span> from your app's history.
+          After payment, copy the <span className="text-foreground font-bold underline decoration-primary/50">12-Digit UTR / Transaction ID</span> from your app's history.
         </p>
       </div>
     </div>

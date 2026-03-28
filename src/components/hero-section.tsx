@@ -1,4 +1,4 @@
-import { ShieldAlert, Terminal, Activity, Lock } from "lucide-react";
+import { ShieldAlert, Terminal, Activity, Lock, BookOpen } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -16,24 +16,24 @@ export function HeroSection() {
       </h1>
       
       <p className="max-w-2xl text-muted-foreground text-base md:text-lg mb-10 leading-relaxed font-medium">
-        Get access to <span className="text-foreground font-bold">restricted mobile tricks</span>, hidden app settings, and private methods that stay away from the public eye.
+        Access <span className="text-foreground font-bold">Restricted Grey Hat Tricks</span>, Private Earnings Methods, and Hidden Deep Web Content.
         <span className="block mt-4 text-foreground font-black text-xl">
-          ₹25 Monthly Entry Fee <span className="text-primary">•</span> Unlock VIP Content
+          ₹25 Monthly Entry <span className="text-primary">•</span> VIP Restricted Layer
         </span>
       </p>
 
       <div className="flex flex-wrap justify-center items-center gap-8 text-[11px] text-muted-foreground font-bold tracking-widest uppercase">
         <div className="flex items-center gap-2">
           <Terminal className="w-4 h-4 text-primary" />
-          <span>Restricted Tricks</span>
+          <span>Grey Hat Tricks</span>
         </div>
         <div className="flex items-center gap-2">
-          <ShieldAlert className="w-4 h-4 text-secondary" />
-          <span>Private Access</span>
+          <BookOpen className="w-4 h-4 text-secondary" />
+          <span>Private Ebooks</span>
         </div>
         <div className="flex items-center gap-2">
           <Lock className="w-4 h-4 text-primary" />
-          <span>Hidden Methods</span>
+          <span>Deep Web Guides</span>
         </div>
       </div>
     </section>

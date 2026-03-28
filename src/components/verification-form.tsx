@@ -82,7 +82,7 @@ export function VerificationForm() {
           </div>
           <h2 className="text-4xl font-headline font-black mb-4 tracking-tighter uppercase neon-glow">ACCESS GRANTED</h2>
           <p className="text-muted-foreground mb-10 leading-relaxed max-w-sm">
-            Request received. We are activating your access link now. Check the channel!
+            Details submitted. Activation is in progress. Join the channel now to claim your content.
           </p>
           <Button asChild size="lg" className="w-full font-black h-16 text-lg tracking-widest shadow-[0_10px_40px_rgba(0,255,255,0.2)] hover:shadow-[0_15px_50px_rgba(0,255,255,0.3)] transition-all">
             <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
@@ -104,7 +104,7 @@ export function VerificationForm() {
           STEP 02: <span className="text-secondary">ACTIVATE</span>
         </h2>
         <p className="text-muted-foreground text-sm">
-          Enter your Telegram username and the 12-digit UTR number to get your entry link.
+          Submit your Telegram handle and the 12-digit UTR number to get your access link.
         </p>
       </div>
 

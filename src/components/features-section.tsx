@@ -1,28 +1,28 @@
 "use client";
 
-import { Zap, ShieldAlert, Cpu, MessageSquareQuote } from "lucide-react";
+import { Zap, ShieldAlert, Cpu, MessageSquareQuote, Book, Globe } from "lucide-react";
 
 export function FeaturesSection() {
   const features = [
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
-      title: "Private Tricks",
-      desc: "Get access to hidden settings and mobile tricks that nobody else shares on the public internet."
+      title: "Grey Hat Tricks",
+      desc: "Exclusive methods and pro tricks designed for those who want to stay ahead of the game."
     },
     {
-      icon: <ShieldAlert className="w-6 h-6 text-secondary" />,
-      title: "Restricted Methods",
-      desc: "Exclusive private methods and pro tips designed for those who want to stay ahead of the game."
+      icon: <Globe className="w-6 h-6 text-secondary" />,
+      title: "Deep Web Content",
+      desc: "Daily updates on restricted information and private data protocols from the hidden layer."
     },
     {
-      icon: <Cpu className="w-6 h-6 text-primary" />,
-      title: "VIP Content",
-      desc: "Daily updates on secret app methods and private tricks for exclusive mobile access."
+      icon: <Book className="w-6 h-6 text-primary" />,
+      title: "Private Ebooks",
+      desc: "Access our collection of private ebooks covering grey hat methods and advanced earnings."
     },
     {
       icon: <MessageSquareQuote className="w-6 h-6 text-secondary" />,
-      title: "Request Anything",
-      desc: "Need a special trick or method? Our members can directly request specific content from the admins."
+      title: "Custom Requests",
+      desc: "Need a specific trick or restricted content? Members can directly request any method from admins."
     }
   ];
 
@@ -33,7 +33,7 @@ export function FeaturesSection() {
           WHAT <span className="text-primary">YOU UNLOCK</span>
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto text-sm font-medium">
-          Enter the restricted layer with your monthly pass. Everything is updated daily.
+          Enter the restricted layer. Get access to content that is never shared publicly.
         </p>
       </div>
 
@@ -61,7 +61,7 @@ export function FeaturesSection() {
           [ ACCESS GRANTED ]
         </p>
         <p className="text-xs text-muted-foreground mt-2 italic">
-          "New restricted tricks added every day. If you want a specific method or trick, just send a request and we will find it for you."
+          "New restricted protocols added daily. If you want a specific grey-hat trick or ebook, send a request and we will find it for you."
         </p>
       </div>
     </section>
