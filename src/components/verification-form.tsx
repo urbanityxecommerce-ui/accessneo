@@ -104,7 +104,7 @@ export function VerificationForm() {
         <CardHeader className="bg-primary/5 border-b border-primary/10">
           <CardTitle className="text-xl font-headline font-bold flex items-center gap-2">
             <Terminal className="w-5 h-5 text-primary" />
-            Step 02: Submit Token
+            Step 02: Submit Details
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -129,11 +129,11 @@ export function VerificationForm() {
                 name="utr"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>12-Digit UTR Number</FormLabel>
+                    <FormLabel>12-Digit UTR / Transaction ID</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter 12-digit number" maxLength={12} {...field} className="bg-background/50 font-mono" />
                     </FormControl>
-                    <FormDescription>The reference number from your ₹25 payment.</FormDescription>
+                    <FormDescription>The UTR / Transaction ID from your ₹25 payment.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}

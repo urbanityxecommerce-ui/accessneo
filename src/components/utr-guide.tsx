@@ -15,7 +15,7 @@ export function UtrGuide() {
     {
       icon: <ClipboardCheck className="w-5 h-5 text-primary" />,
       title: "Copy UTR",
-      desc: "Extract the 12-digit number (UTR or Ref No)."
+      desc: "Extract the 12-digit UTR / Transaction ID."
     }
   ];
 

@@ -48,7 +48,7 @@ export function PaymentSection() {
       </Card>
       
       <p className="text-left text-xs text-muted-foreground italic">
-        *Important: Ensure you save the 12-digit UTR/Ref number for validation.
+        *Important: Ensure you save the 12-digit UTR / Transaction ID for validation.
       </p>
     </div>
   );
