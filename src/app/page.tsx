@@ -14,8 +14,7 @@ export default function Home() {
       <HeroSection />
       
       <div className="max-w-6xl mx-auto px-4 pb-20">
-        <FeaturesSection />
-
+        {/* ACTION BLOCK: PAYMENT & VERIFICATION FIRST */}
         <div className="glass-card rounded-[2rem] p-6 md:p-10 mb-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
             <span className="font-mono text-[120px] leading-none font-black">25</span>
@@ -27,6 +26,9 @@ export default function Home() {
             <VerificationForm />
           </div>
         </div>
+
+        {/* INFO BLOCKS: FEATURES & GUIDE SECOND */}
+        <FeaturesSection />
         
         <UtrGuide />
       </div>
