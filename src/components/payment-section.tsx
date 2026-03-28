@@ -2,7 +2,6 @@
 
 import { Copy, CreditCard, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
 export function PaymentSection() {
@@ -26,7 +25,7 @@ export function PaymentSection() {
           01. PROTOCOL <span className="text-primary">FEE</span>
         </h2>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Pay ₹25 monthly to access all contents of the private channel. 
+          Pay <span className="text-foreground font-bold underline decoration-primary">₹25 Monthly</span> to access all contents of the private channel. 
           Use the address below to complete the handshake.
         </p>
       </div>
@@ -39,7 +38,7 @@ export function PaymentSection() {
               <span className="text-[9px] text-primary font-black tracking-[0.3em] uppercase">DESTINATION UPI</span>
               <p className="font-mono font-bold text-lg text-foreground tracking-tight">{upiId}</p>
             </div>
-            <Button variant="secondary" size="icon" onClick={copyUpi} className="h-12 w-12 rounded-xl shadow-lg">
+            <Button variant="secondary" size="icon" onClick={copyUpi} className="h-12 w-12 rounded-xl shadow-lg border border-white/10 hover:border-primary/50 transition-all">
               <Copy className="w-5 h-5" />
             </Button>
           </div>
@@ -51,7 +50,7 @@ export function PaymentSection() {
           </div>
           <div>
             <p className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase mb-0.5">MONTHLY ACCESS FEE</p>
-            <p className="text-xl font-headline font-black text-foreground">₹25.00</p>
+            <p className="text-xl font-headline font-black text-foreground">₹25.00 / Month</p>
           </div>
         </div>
       </div>

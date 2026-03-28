@@ -17,7 +17,9 @@ export function HeroSection() {
       
       <p className="max-w-2xl text-muted-foreground text-base md:text-lg mb-10 leading-relaxed font-medium">
         Access undocumented digital architecture and restricted bypasses. 
-        Full channel access requires a <span className="text-foreground border-b border-primary/30">monthly subscription</span> of ₹25.
+        <span className="block mt-2 text-foreground font-black">
+          ₹25 Monthly Access Fee <span className="text-primary">•</span> Private Channel Unlock
+        </span>
       </p>
 
       <div className="flex flex-wrap justify-center items-center gap-8 text-[11px] text-muted-foreground font-bold tracking-widest uppercase">
