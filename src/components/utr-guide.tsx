@@ -1,30 +1,29 @@
-
-import { Search, History, MousePointer2, ListOrdered } from "lucide-react";
+import { History, MousePointer2, ListOrdered, Lock } from "lucide-react";
 
 export function UtrGuide() {
   const steps = [
     {
       icon: <History className="w-5 h-5 text-primary" />,
-      title: "History",
-      desc: "Open your payment app (PhonePe, GPay, Paytm) and go to transaction history."
+      title: "Logs",
+      desc: "Open your payment app history to find the handshake record."
     },
     {
       icon: <MousePointer2 className="w-5 h-5 text-primary" />,
-      title: "Select Transaction",
-      desc: "Click on the ₹25 transaction you just made to Glitch Access."
+      title: "Select Record",
+      desc: "Locate the ₹25 transaction sent to the Glitch network."
     },
     {
-      icon: <ListOrdered className="w-5 h-5 text-primary" />,
-      title: "Find UTR",
-      desc: "Look for the 12-digit number labeled UTR, UPI Ref No, or Transaction ID."
+      icon: <Lock className="w-5 h-5 text-primary" />,
+      title: "Find Token",
+      desc: "Copy the 12-digit UTR or Transaction ID to confirm your clearance."
     }
   ];
 
   return (
     <section className="px-4 py-12 max-w-4xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-2xl font-headline font-bold mb-2">How to find your UTR?</h2>
-        <p className="text-muted-foreground">Follow these simple steps to locate your transaction ID.</p>
+        <h2 className="text-2xl font-headline font-bold mb-2">How to confirm your clearance?</h2>
+        <p className="text-muted-foreground">Follow these steps to find the 12-digit verification token.</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">

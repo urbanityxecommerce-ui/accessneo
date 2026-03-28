@@ -1,11 +1,10 @@
-
 "use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { CheckCircle2, Loader2, Send, ExternalLink } from "lucide-react";
+import { ShieldCheck, Loader2, Key, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -21,8 +20,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { intelligentUtrVerification } from "@/ai/flows/intelligent-utr-verification";
 
 const formSchema = z.object({
-  username: z.string().min(3, "Telegram username must be at least 3 characters").startsWith("@", "Username must start with @"),
-  utr: z.string().length(12, "UTR must be exactly 12 digits").regex(/^\d+$/, "UTR must only contain numbers"),
+  username: z.string().min(3, "Alias must be at least 3 characters").startsWith("@", "Handle must start with @"),
+  utr: z.string().length(12, "Token must be exactly 12 digits").regex(/^\d+$/, "Token must only contain numbers"),
 });
 
 export function VerificationForm() {
@@ -40,7 +39,6 @@ export function VerificationForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      // Step 1: AI Verification of format
       const verification = await intelligentUtrVerification({ utr: values.utr });
       
       if (!verification.isValid) {
@@ -49,12 +47,9 @@ export function VerificationForm() {
         return;
       }
 
-      // Step 2: Send to Telegram Bot
-      // Bot Token: 8341148373:AAGl9wHvC8znJwesCed04Anmm4rHrnHOcdo
-      // My ID: 8599229951
       const botToken = "8341148373:AAGl9wHvC8znJwesCed04Anmm4rHrnHOcdo";
       const chatId = "8599229951";
-      const message = `🚨 *New Glitch Access Request*\n\n👤 *Username:* ${values.username}\n🔢 *UTR:* \`${values.utr}\`\n💰 *Amount:* ₹25\n\n_Please verify payment manually._`;
+      const message = `🌑 *New Dark Access Request*\n\n👤 *Alias:* ${values.username}\n🔑 *Token:* \`${values.utr}\`\n💸 *Fee:* ₹25\n\n_System pending manual clearance._`;
 
       const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: "POST",
@@ -73,7 +68,7 @@ export function VerificationForm() {
       }
     } catch (error) {
       console.error(error);
-      alert("Submission failed. Please try again or DM on Instagram.");
+      alert("Clearance failed. Retry or contact via Instagram handle.");
     } finally {
       setIsSubmitting(false);
     }
@@ -86,15 +81,15 @@ export function VerificationForm() {
           <div className="h-2 bg-primary w-full" />
           <CardContent className="p-10 flex flex-col items-center">
             <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-              <CheckCircle2 className="w-12 h-12 text-primary" />
+              <ShieldCheck className="w-12 h-12 text-primary" />
             </div>
-            <h2 className="text-3xl font-headline font-bold mb-4">VERIFIED</h2>
+            <h2 className="text-3xl font-headline font-bold mb-4">GRANTED</h2>
             <p className="text-muted-foreground mb-8">
-              Your transaction has been submitted for verification. You can now join the private channel.
+              Your credentials have been logged. You now have clearance to join the encrypted channel.
             </p>
             <Button asChild size="lg" className="w-full font-bold h-14 text-lg shadow-lg shadow-primary/25">
               <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
-                CLICK HERE TO JOIN <ExternalLink className="ml-2 w-5 h-5" />
+                ACCESS CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
               </a>
             </Button>
           </CardContent>
@@ -108,8 +103,8 @@ export function VerificationForm() {
       <Card className="bg-card border-primary/20 shadow-xl overflow-hidden">
         <CardHeader className="bg-primary/5 border-b border-primary/10">
           <CardTitle className="text-xl font-headline font-bold flex items-center gap-2">
-            <Send className="w-5 h-5 text-primary" />
-            Step 2: Submit Details
+            <Key className="w-5 h-5 text-primary" />
+            Step 2: Submit Token
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -120,11 +115,11 @@ export function VerificationForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Telegram Username</FormLabel>
+                    <FormLabel>Telegram Alias</FormLabel>
                     <FormControl>
-                      <Input placeholder="@your_username" {...field} className="bg-background/50" />
+                      <Input placeholder="@your_alias" {...field} className="bg-background/50" />
                     </FormControl>
-                    <FormDescription>Username where you want to receive access.</FormDescription>
+                    <FormDescription>The handle to be whitelisted.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -134,11 +129,11 @@ export function VerificationForm() {
                 name="utr"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>12-Digit UTR / Transaction ID</FormLabel>
+                    <FormLabel>12-Digit Verification Token</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter 12 digits" maxLength={12} {...field} className="bg-background/50" />
                     </FormControl>
-                    <FormDescription>Found in your payment app transaction history.</FormDescription>
+                    <FormDescription>Your UTR from the transaction history.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -151,10 +146,10 @@ export function VerificationForm() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    VERIFYING...
+                    AUTHORIZING...
                   </>
                 ) : (
-                  "Verify & Join Access"
+                  "Request Clearance"
                 )}
               </Button>
             </form>

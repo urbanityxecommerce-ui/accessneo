@@ -1,4 +1,4 @@
-import { Instagram, Send } from "lucide-react";
+import { Instagram, Ghost } from "lucide-react";
 
 export function Footer() {
   return (
@@ -6,16 +6,16 @@ export function Footer() {
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-            <Send className="text-white w-6 h-6 rotate-12" />
+            <Ghost className="text-white w-6 h-6" />
           </div>
           <div>
-            <span className="text-xl font-headline font-bold tracking-tight">GLITCH <span className="text-primary">ACCESS</span></span>
-            <p className="text-xs text-muted-foreground tracking-widest uppercase font-medium">Strategic Insights Network</p>
+            <span className="text-xl font-headline font-bold tracking-tight">GLITCH <span className="text-primary">DARK</span></span>
+            <p className="text-xs text-muted-foreground tracking-widest uppercase font-medium">Digital Shadow Network</p>
           </div>
         </div>
 
         <div className="flex flex-col items-center md:items-end gap-2">
-          <p className="text-sm text-muted-foreground">For institutional inquiries or support:</p>
+          <p className="text-sm text-muted-foreground">For network clearance or support:</p>
           <a 
             href="https://instagram.com/n_sider_neo" 
             target="_blank" 
@@ -29,7 +29,7 @@ export function Footer() {
       </div>
       
       <div className="mt-12 text-center text-xs text-muted-foreground/40">
-        &copy; {new Date().getFullYear()} Glitch Access Network. All rights reserved. Intellectual Property of Glitch Access.
+        &copy; {new Date().getFullYear()} Glitch Shadows. Deep Web Architecture. Confidential.
       </div>
     </footer>
   );
