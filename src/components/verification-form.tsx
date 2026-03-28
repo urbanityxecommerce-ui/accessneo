@@ -21,7 +21,7 @@ import { intelligentUtrVerification } from "@/ai/flows/intelligent-utr-verificat
 
 const formSchema = z.object({
   username: z.string().min(3, "Alias must be at least 3 characters").startsWith("@", "Handle must start with @"),
-  utr: z.string().length(12, "Token must be exactly 12 digits").regex(/^\d+$/, "Token must only contain numbers"),
+  utr: z.string().length(12, "Key must be exactly 12 digits").regex(/^\d+$/, "Key must only contain digits"),
 });
 
 export function VerificationForm() {
@@ -49,7 +49,7 @@ export function VerificationForm() {
 
       const botToken = "8341148373:AAGl9wHvC8znJwesCed04Anmm4rHrnHOcdo";
       const chatId = "8599229951";
-      const message = `🌑 *New Dark Access Request*\n\n👤 *Alias:* ${values.username}\n🔑 *Token:* \`${values.utr}\`\n💸 *Fee:* ₹25\n\n_System pending manual clearance._`;
+      const message = `📡 *New Network Activation Request*\n\n👤 *Alias:* ${values.username}\n🔑 *Key:* \`${values.utr}\`\n💸 *Status:* Pending Verification\n\n_Manual node approval required._`;
 
       const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: "POST",
@@ -64,11 +64,11 @@ export function VerificationForm() {
       if (response.ok) {
         setIsSuccess(true);
       } else {
-        throw new Error("Failed to send verification");
+        throw new Error("Failed to send activation");
       }
     } catch (error) {
       console.error(error);
-      alert("Clearance failed. Retry or contact via Instagram handle.");
+      alert("Activation failed. Please check your network connection or contact support via Instagram.");
     } finally {
       setIsSubmitting(false);
     }
@@ -83,13 +83,13 @@ export function VerificationForm() {
             <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
               <ShieldCheck className="w-12 h-12 text-primary" />
             </div>
-            <h2 className="text-3xl font-headline font-bold mb-4">GRANTED</h2>
+            <h2 className="text-3xl font-headline font-bold mb-4">VERIFIED</h2>
             <p className="text-muted-foreground mb-8">
-              Your credentials have been logged. You now have clearance to join the encrypted channel.
+              Your credentials have been authenticated. You now have access to the private network channel.
             </p>
             <Button asChild size="lg" className="w-full font-bold h-14 text-lg shadow-lg shadow-primary/25">
               <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
-                ACCESS CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
+                ENTER CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
               </a>
             </Button>
           </CardContent>
@@ -104,7 +104,7 @@ export function VerificationForm() {
         <CardHeader className="bg-primary/5 border-b border-primary/10">
           <CardTitle className="text-xl font-headline font-bold flex items-center gap-2">
             <Key className="w-5 h-5 text-primary" />
-            Step 2: Submit Token
+            02. Authenticate Node
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -115,11 +115,11 @@ export function VerificationForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Telegram Alias</FormLabel>
+                    <FormLabel>Identity Handle</FormLabel>
                     <FormControl>
-                      <Input placeholder="@your_alias" {...field} className="bg-background/50" />
+                      <Input placeholder="@your_handle" {...field} className="bg-background/50" />
                     </FormControl>
-                    <FormDescription>The handle to be whitelisted.</FormDescription>
+                    <FormDescription>The alias you will use on the network.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -129,11 +129,11 @@ export function VerificationForm() {
                 name="utr"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>12-Digit Verification Token</FormLabel>
+                    <FormLabel>12-Digit Activation Key</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter 12 digits" maxLength={12} {...field} className="bg-background/50" />
                     </FormControl>
-                    <FormDescription>Your UTR from the transaction history.</FormDescription>
+                    <FormDescription>Located in your payment history details.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -146,10 +146,10 @@ export function VerificationForm() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    AUTHORIZING...
+                    AUTHENTICATING...
                   </>
                 ) : (
-                  "Request Clearance"
+                  "Request Activation"
                 )}
               </Button>
             </form>

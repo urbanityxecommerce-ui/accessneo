@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'GLITCH - The Grey Path | Exclusive Digital Shadows',
-  description: 'Access the hidden architecture of the web. Grey hat insights, exclusive exploits, and deep web intelligence.',
+  title: 'GLITCH - Advanced Architecture | Deep Network Access',
+  description: 'Explore the hidden layers of digital infrastructure. Exclusive protocols, unconventional insights, and deep web architecture.',
 };
 
 export default function RootLayout({
