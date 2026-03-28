@@ -1,4 +1,4 @@
-import { Instagram, Ghost, ShieldAlert } from "lucide-react";
+import { Instagram, ShieldAlert } from "lucide-react";
 
 export function Footer() {
   return (
@@ -11,13 +11,13 @@ export function Footer() {
             <ShieldAlert className="text-background w-8 h-8" />
           </div>
           <div>
-            <span className="text-2xl font-headline font-black tracking-tight uppercase leading-none">SHADOW <span className="text-primary italic">PROTOCOL</span></span>
-            <p className="text-[10px] text-muted-foreground tracking-[0.4em] uppercase font-bold mt-1">Node Status: <span className="text-primary">RESTRICTED</span></p>
+            <span className="text-2xl font-headline font-black tracking-tight uppercase leading-none">SHADOW <span className="text-primary italic">NODE</span></span>
+            <p className="text-[10px] text-muted-foreground tracking-[0.4em] uppercase font-bold mt-1">Status: <span className="text-primary">ONLINE</span></p>
           </div>
         </div>
 
         <div className="flex flex-col items-center md:items-end gap-3">
-          <p className="text-[10px] text-muted-foreground font-black tracking-widest uppercase">Protocol Admin Support</p>
+          <p className="text-[10px] text-muted-foreground font-black tracking-widest uppercase">Contact Admin</p>
           <a 
             href="https://instagram.com/n_sider_neo" 
             target="_blank" 
@@ -31,7 +31,7 @@ export function Footer() {
       </div>
       
       <div className="mt-16 text-center text-[10px] text-muted-foreground/30 font-mono uppercase tracking-[0.5em]">
-        &copy; {new Date().getFullYear()} PRIVATE HANDSHAKE PROTOCOL. ALL BYPASSES LOGGED.
+        &copy; {new Date().getFullYear()} SHADOW NODE. ALL RIGHTS RESERVED.
       </div>
     </footer>
   );

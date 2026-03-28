@@ -11,7 +11,7 @@ export function PaymentSection() {
   const copyUpi = () => {
     navigator.clipboard.writeText(upiId);
     toast({
-      description: "UPI Address copied to system clipboard",
+      description: "UPI Address copied successfully",
     });
   };
 
@@ -22,11 +22,11 @@ export function PaymentSection() {
           <CreditCard className="w-6 h-6 text-primary" />
         </div>
         <h2 className="text-3xl font-headline font-black mb-3 tracking-tight uppercase">
-          01. PROTOCOL <span className="text-primary">FEE</span>
+          STEP 01: <span className="text-primary">PAYMENT</span>
         </h2>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Pay <span className="text-foreground font-bold underline decoration-primary">₹25 Monthly</span> to access all contents of the private channel. 
-          Use the address below to complete the handshake.
+          Pay <span className="text-foreground font-bold underline decoration-primary">₹25 Monthly</span> to get full access to our Private Channel. 
+          Use the UPI ID below to complete your payment.
         </p>
       </div>
 
@@ -35,7 +35,7 @@ export function PaymentSection() {
           <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
           <div className="relative flex items-center justify-between p-5 rounded-2xl bg-background/80 border border-white/5 backdrop-blur-md">
             <div className="space-y-1.5">
-              <span className="text-[9px] text-primary font-black tracking-[0.3em] uppercase">DESTINATION UPI</span>
+              <span className="text-[9px] text-primary font-black tracking-[0.3em] uppercase">PAY TO THIS UPI</span>
               <p className="font-mono font-bold text-lg text-foreground tracking-tight">{upiId}</p>
             </div>
             <Button variant="secondary" size="icon" onClick={copyUpi} className="h-12 w-12 rounded-xl shadow-lg border border-white/10 hover:border-primary/50 transition-all">
@@ -49,7 +49,7 @@ export function PaymentSection() {
             <span className="text-primary font-black text-lg">₹</span>
           </div>
           <div>
-            <p className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase mb-0.5">MONTHLY ACCESS FEE</p>
+            <p className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase mb-0.5">MONTHLY PASS</p>
             <p className="text-xl font-headline font-black text-foreground">₹25.00 / Month</p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export function PaymentSection() {
           <ChevronRight className="w-4 h-4 text-secondary" />
         </div>
         <p className="text-xs text-muted-foreground italic leading-relaxed">
-          The 12-digit <span className="text-foreground font-bold underline decoration-primary/50">UTR / Transaction ID</span> is required for the final handshake.
+          After payment, copy the <span className="text-foreground font-bold underline decoration-primary/50">12-Digit UTR Number</span> from your app's history.
         </p>
       </div>
     </div>

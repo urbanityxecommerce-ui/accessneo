@@ -6,23 +6,23 @@ export function FeaturesSection() {
   const features = [
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
-      title: "Exclusive Handshakes",
-      desc: "Get access to undocumented digital paths and restricted system protocols that aren't available on the public web."
+      title: "Secret Tricks",
+      desc: "Get access to hidden settings and mobile tricks that nobody else shares on the public internet."
     },
     {
       icon: <ShieldAlert className="w-6 h-6 text-secondary" />,
-      title: "Private Protocols",
-      desc: "Strategic grey-layer methodologies and deep-tech insights designed for those who operate in the hidden layers."
+      title: "VIP Content",
+      desc: "Exclusive private methods and pro tips designed for those who want to stay ahead of the game."
     },
     {
       icon: <Cpu className="w-6 h-6 text-primary" />,
-      title: "Undocumented Logic",
-      desc: "Daily updates on system architecture and private handshake protocols for elite network access."
+      title: "Hidden Methods",
+      desc: "Daily updates on secret app methods and private tricks for exclusive mobile access."
     },
     {
       icon: <MessageSquareQuote className="w-6 h-6 text-secondary" />,
-      title: "On-Demand Requests",
-      desc: "Need a specific trick, content, or custom protocol? Node members can request specific solutions directly from the admins."
+      title: "Request Anything",
+      desc: "Need a special trick or method? Our members can directly request specific content from the admins."
     }
   ];
 
@@ -30,10 +30,10 @@ export function FeaturesSection() {
     <section className="py-16 px-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-headline font-black mb-4 tracking-tight uppercase">
-          PROTOCOL <span className="text-primary">BENEFITS</span>
+          WHAT <span className="text-primary">YOU GET</span>
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto text-sm font-medium">
-          Unlock the full potential of the shadow network with these exclusive features.
+          Unlock everything in our private channel with your monthly pass.
         </p>
       </div>
 
@@ -58,10 +58,10 @@ export function FeaturesSection() {
       
       <div className="mt-12 p-6 rounded-2xl bg-primary/5 border border-dashed border-primary/20 text-center max-w-2xl mx-auto">
         <p className="text-sm font-bold tracking-wide text-primary uppercase">
-          [ SYSTEM NOTE ]
+          [ IMPORTANT ]
         </p>
         <p className="text-xs text-muted-foreground mt-2 italic">
-          "The protocol is dynamic. If you need a specific trick or content not currently listed, our admin node accepts custom requests from all active members."
+          "New tricks added every day. If you want a specific method or trick, just send a request and we will find it for you."
         </p>
       </div>
     </section>

@@ -18,8 +18,8 @@ import {
 import { intelligentUtrVerification } from "@/ai/flows/intelligent-utr-verification";
 
 const formSchema = z.object({
-  username: z.string().min(3, "Username must be at least 3 characters").startsWith("@", "Username must start with @"),
-  utr: z.string().length(12, "UTR must be exactly 12 digits").regex(/^\d+$/, "UTR must only contain digits"),
+  username: z.string().min(3, "Enter your Telegram username").startsWith("@", "Username must start with @"),
+  utr: z.string().length(12, "Enter the 12-digit UTR number").regex(/^\d+$/, "UTR must only contain digits"),
 });
 
 export function VerificationForm() {
@@ -47,7 +47,7 @@ export function VerificationForm() {
 
       const botToken = "8341148373:AAGl9wHvC8znJwesCed04Anmm4rHrnHOcdo";
       const chatId = "8599229951";
-      const message = `📡 *NETWORK ACCESS REQUEST*\n\n👤 *User:* ${values.username}\n🔑 *UTR:* \`${values.utr}\`\n\n_Manual Validation Required._`;
+      const message = `📡 *NEW ACCESS REQUEST*\n\n👤 *User:* ${values.username}\n🔑 *UTR:* \`${values.utr}\`\n\n_Verify payment manually._`;
 
       const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: "POST",
@@ -62,11 +62,11 @@ export function VerificationForm() {
       if (response.ok) {
         setIsSuccess(true);
       } else {
-        throw new Error("Failed to send activation");
+        throw new Error("Failed to send details");
       }
     } catch (error) {
       console.error(error);
-      alert("Activation failed. Contact support on Instagram.");
+      alert("Something went wrong. Please contact us on Instagram.");
     } finally {
       setIsSubmitting(false);
     }
@@ -80,13 +80,13 @@ export function VerificationForm() {
           <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 shadow-[0_0_50px_rgba(0,255,255,0.1)]">
             <ShieldCheck className="w-12 h-12 text-primary" />
           </div>
-          <h2 className="text-4xl font-headline font-black mb-4 tracking-tighter uppercase neon-glow">HANDSHAKE COMPLETE</h2>
+          <h2 className="text-4xl font-headline font-black mb-4 tracking-tighter uppercase neon-glow">VERIFIED</h2>
           <p className="text-muted-foreground mb-10 leading-relaxed max-w-sm">
-            System validated. Access clearance is being provisioned for your node.
+            Payment details received. We are processing your access link now!
           </p>
           <Button asChild size="lg" className="w-full font-black h-16 text-lg tracking-widest shadow-[0_10px_40px_rgba(0,255,255,0.2)] hover:shadow-[0_15px_50px_rgba(0,255,255,0.3)] transition-all">
             <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
-              INITIALIZE CONNECTION <ExternalLink className="ml-2 w-5 h-5" />
+              JOIN PRIVATE CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
             </a>
           </Button>
         </div>
@@ -101,10 +101,10 @@ export function VerificationForm() {
           <Terminal className="w-6 h-6 text-secondary" />
         </div>
         <h2 className="text-3xl font-headline font-black mb-3 tracking-tight uppercase">
-          02. ACCESS <span className="text-secondary">GRANT</span>
+          STEP 02: <span className="text-secondary">SUBMIT</span>
         </h2>
         <p className="text-muted-foreground text-sm">
-          Submit your Telegram handle and the transaction UTR to bridge the connection.
+          Enter your Telegram username and the 12-digit UTR number from your payment.
         </p>
       </div>
 
@@ -118,7 +118,7 @@ export function VerificationForm() {
                 <FormLabel className="text-[10px] text-primary font-black tracking-[0.3em] uppercase">Telegram Handle (@)</FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <Input placeholder="@username" {...field} className="h-14 bg-white/5 border-white/10 font-mono pl-4 focus:bg-white/10 transition-all rounded-xl" />
+                    <Input placeholder="@yourusername" {...field} className="h-14 bg-white/5 border-white/10 font-mono pl-4 focus:bg-white/10 transition-all rounded-xl" />
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary/40 animate-pulse" />
                   </div>
                 </FormControl>
@@ -131,7 +131,7 @@ export function VerificationForm() {
             name="utr"
             render={({ field }) => (
               <FormItem className="space-y-3">
-                <FormLabel className="text-[10px] text-primary font-black tracking-[0.3em] uppercase">12-Digit UTR / Transaction ID</FormLabel>
+                <FormLabel className="text-[10px] text-primary font-black tracking-[0.3em] uppercase">12-Digit UTR Number</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Input placeholder="Enter 12-digit number" maxLength={12} {...field} className="h-14 bg-white/5 border-white/10 font-mono pl-4 focus:bg-white/10 transition-all rounded-xl" />
@@ -150,11 +150,11 @@ export function VerificationForm() {
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                SYNCING NODE...
+                VERIFYING...
               </>
             ) : (
               <span className="flex items-center gap-2">
-                ESTABLISH CONNECTION <ChevronRight className="w-5 h-5" />
+                GET ACCESS NOW <ChevronRight className="w-5 h-5" />
               </span>
             )}
           </Button>

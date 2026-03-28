@@ -4,26 +4,26 @@ export function UtrGuide() {
   const steps = [
     {
       icon: <History className="w-5 h-5 text-primary" />,
-      title: "Open History",
-      desc: "Go to your UPI app's transaction history."
+      title: "App History",
+      desc: "Open your UPI app's history or transactions."
     },
     {
       icon: <Search className="w-5 h-5 text-primary" />,
-      title: "Find Entry",
-      desc: "Locate the ₹25 transaction to the node address."
+      title: "Find Payment",
+      desc: "Look for the ₹25 transaction you just made."
     },
     {
       icon: <ClipboardCheck className="w-5 h-5 text-primary" />,
       title: "Copy UTR",
-      desc: "Extract the 12-digit UTR / Transaction ID."
+      desc: "Find and copy the 12-digit UTR number."
     }
   ];
 
   return (
     <section className="px-4 py-12 max-w-4xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-2xl font-headline font-bold mb-2 tracking-tight">Validation Protocol</h2>
-        <p className="text-muted-foreground">How to correctly extract your entry token.</p>
+        <h2 className="text-2xl font-headline font-bold mb-2 tracking-tight">How to Get UTR?</h2>
+        <p className="text-muted-foreground">Follow these simple steps to find your 12-digit number.</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
