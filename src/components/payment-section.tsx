@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy, CreditCard } from "lucide-react";
+import { Copy, CreditCard, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
@@ -12,44 +12,58 @@ export function PaymentSection() {
   const copyUpi = () => {
     navigator.clipboard.writeText(upiId);
     toast({
-      description: "UPI Address copied to clipboard",
+      description: "UPI Address copied to system clipboard",
     });
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div className="text-left">
-        <h2 className="text-2xl font-headline font-bold mb-2 flex items-center gap-2">
+        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
           <CreditCard className="w-6 h-6 text-primary" />
-          Step 01: Protocol Entry
+        </div>
+        <h2 className="text-3xl font-headline font-black mb-3 tracking-tight uppercase">
+          01. PROTOCOL <span className="text-primary">FEE</span>
         </h2>
-        <p className="text-muted-foreground">Complete a ₹25 contribution via UPI to generate your private access token.</p>
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          Contribution is required to generate your unique node access token. 
+          Use the address below to complete the transfer.
+        </p>
       </div>
 
-      <Card className="bg-card border-primary/20 overflow-hidden shadow-2xl">
-        <CardContent className="p-6 space-y-4">
-          <div className="flex items-center justify-between p-3 rounded-lg bg-background border border-border">
-            <div className="space-y-1">
-              <span className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase">UPI ADDRESS</span>
-              <p className="font-mono font-medium text-primary text-sm sm:text-base truncate mr-2">{upiId}</p>
+      <div className="space-y-4">
+        <div className="group relative">
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+          <div className="relative flex items-center justify-between p-5 rounded-2xl bg-background/80 border border-white/5 backdrop-blur-md">
+            <div className="space-y-1.5">
+              <span className="text-[9px] text-primary font-black tracking-[0.3em] uppercase">DESTINATION UPI</span>
+              <p className="font-mono font-bold text-lg text-foreground tracking-tight">{upiId}</p>
             </div>
-            <Button variant="ghost" size="icon" onClick={copyUpi} className="hover:bg-primary/10 shrink-0">
-              <Copy className="w-4 h-4 text-primary" />
+            <Button variant="secondary" size="icon" onClick={copyUpi} className="h-12 w-12 rounded-xl shadow-lg">
+              <Copy className="w-5 h-5" />
             </Button>
           </div>
+        </div>
 
-          <div className="flex items-center gap-3 p-3 rounded-lg border border-dashed border-primary/30 text-sm">
-            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-              <span className="text-primary font-bold">₹</span>
-            </div>
-            <p className="text-muted-foreground">Entry Fee: <span className="text-foreground font-bold">₹25.00</span></p>
+        <div className="flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/5 text-sm">
+          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 border border-primary/30">
+            <span className="text-primary font-black text-lg">₹</span>
           </div>
-        </CardContent>
-      </Card>
+          <div>
+            <p className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase mb-0.5">MINIMUM CONTRIBUTION</p>
+            <p className="text-xl font-headline font-black text-foreground">₹25.00</p>
+          </div>
+        </div>
+      </div>
       
-      <p className="text-left text-xs text-muted-foreground italic">
-        *Important: Ensure you save the 12-digit UTR / Transaction ID for validation.
-      </p>
+      <div className="flex items-start gap-3 p-4 rounded-xl bg-secondary/5 border border-secondary/10">
+        <div className="mt-1">
+          <ChevronRight className="w-4 h-4 text-secondary" />
+        </div>
+        <p className="text-xs text-muted-foreground italic leading-relaxed">
+          The 12-digit <span className="text-foreground font-bold underline decoration-primary/50">UTR / Transaction ID</span> is required for the final handshake.
+        </p>
+      </div>
     </div>
   );
 }

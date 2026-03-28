@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ShieldCheck, Loader2, ExternalLink, Terminal } from "lucide-react";
+import { ShieldCheck, Loader2, ExternalLink, Terminal, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -16,7 +16,6 @@ import {
   FormMessage,
   FormDescription,
 } from "@/components/ui/form";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { intelligentUtrVerification } from "@/ai/flows/intelligent-utr-verification";
 
 const formSchema = z.object({
@@ -77,85 +76,91 @@ export function VerificationForm() {
   if (isSuccess) {
     return (
       <div className="animate-in fade-in zoom-in duration-500 w-full">
-        <Card className="bg-card border-primary shadow-[0_0_30px_rgba(13,124,242,0.15)] text-center overflow-hidden">
-          <div className="h-2 bg-primary w-full" />
-          <CardContent className="p-10 flex flex-col items-center">
-            <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-              <ShieldCheck className="w-12 h-12 text-primary" />
-            </div>
-            <h2 className="text-3xl font-headline font-bold mb-4">ACCESS GRANTED</h2>
-            <p className="text-muted-foreground mb-8">
-              Your details are being validated. Use the link below to enter the private channel.
-            </p>
-            <Button asChild size="lg" className="w-full font-bold h-14 text-lg shadow-lg shadow-primary/25">
-              <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
-                JOIN PRIVATE CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
+        <div className="glass-card rounded-3xl p-10 flex flex-col items-center text-center relative overflow-hidden group">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary animate-pulse" />
+          <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 shadow-[0_0_50px_rgba(0,255,255,0.1)]">
+            <ShieldCheck className="w-12 h-12 text-primary" />
+          </div>
+          <h2 className="text-4xl font-headline font-black mb-4 tracking-tighter uppercase neon-glow">HANDSHAKE COMPLETE</h2>
+          <p className="text-muted-foreground mb-10 leading-relaxed max-w-sm">
+            System validated. Access clearance is being provisioned for your node.
+          </p>
+          <Button asChild size="lg" className="w-full font-black h-16 text-lg tracking-widest shadow-[0_10px_40px_rgba(0,255,255,0.2)] hover:shadow-[0_15px_50px_rgba(0,255,255,0.3)] transition-all">
+            <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
+              INITIALIZE CONNECTION <ExternalLink className="ml-2 w-5 h-5" />
+            </a>
+          </Button>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="w-full">
-      <Card className="bg-card border-primary/20 shadow-xl overflow-hidden">
-        <CardHeader className="bg-primary/5 border-b border-primary/10">
-          <CardTitle className="text-xl font-headline font-bold flex items-center gap-2">
-            <Terminal className="w-5 h-5 text-primary" />
-            Step 02: Submit Details
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="p-6">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="username"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Telegram Username (@)</FormLabel>
-                    <FormControl>
-                      <Input placeholder="@username" {...field} className="bg-background/50 font-mono" />
-                    </FormControl>
-                    <FormDescription>Your username to receive the access grant.</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="utr"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>12-Digit UTR / Transaction ID</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter 12-digit number" maxLength={12} {...field} className="bg-background/50 font-mono" />
-                    </FormControl>
-                    <FormDescription>The UTR / Transaction ID from your ₹25 payment.</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button 
-                type="submit" 
-                className="w-full h-12 font-bold text-base" 
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    UPLOADING...
-                  </>
-                ) : (
-                  "ESTABLISH CONNECTION"
-                )}
-              </Button>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
+      <div className="text-left mb-8">
+        <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4 border border-secondary/20">
+          <Terminal className="w-6 h-6 text-secondary" />
+        </div>
+        <h2 className="text-3xl font-headline font-black mb-3 tracking-tight uppercase">
+          02. ACCESS <span className="text-secondary">GRANT</span>
+        </h2>
+        <p className="text-muted-foreground text-sm">
+          Submit your Telegram handle and the transaction UTR to bridge the connection.
+        </p>
+      </div>
+
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <FormField
+            control={form.control}
+            name="username"
+            render={({ field }) => (
+              <FormItem className="space-y-3">
+                <FormLabel className="text-[10px] text-primary font-black tracking-[0.3em] uppercase">Telegram Handle (@)</FormLabel>
+                <FormControl>
+                  <div className="relative">
+                    <Input placeholder="@username" {...field} className="h-14 bg-white/5 border-white/10 font-mono pl-4 focus:bg-white/10 transition-all rounded-xl" />
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary/40 animate-pulse" />
+                  </div>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="utr"
+            render={({ field }) => (
+              <FormItem className="space-y-3">
+                <FormLabel className="text-[10px] text-primary font-black tracking-[0.3em] uppercase">12-Digit UTR / Transaction ID</FormLabel>
+                <FormControl>
+                  <div className="relative">
+                    <Input placeholder="Enter 12-digit number" maxLength={12} {...field} className="h-14 bg-white/5 border-white/10 font-mono pl-4 focus:bg-white/10 transition-all rounded-xl" />
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-secondary/40 animate-pulse" />
+                  </div>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button 
+            type="submit" 
+            className="w-full h-16 font-black text-base tracking-[0.2em] uppercase shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all rounded-xl mt-4" 
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                SYNCING NODE...
+              </>
+            ) : (
+              <span className="flex items-center gap-2">
+                ESTABLISH CONNECTION <ChevronRight className="w-5 h-5" />
+              </span>
+            )}
+          </Button>
+        </form>
+      </Form>
     </div>
   );
 }

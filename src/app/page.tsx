@@ -7,20 +7,16 @@ import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative">
-      {/* Background decoration */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-[20%] -left-[10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[20%] -right-[10%] w-[30%] h-[30%] bg-secondary/5 blur-[100px] rounded-full" />
-      </div>
-
+    <main className="min-h-screen relative cyber-grid">
+      <div className="fixed inset-0 bg-background/50 backdrop-blur-[2px] -z-10" />
+      
       <HeroSection />
       
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Consolidated Steps 1 & 2 */}
-        <div className="bg-primary/5 rounded-3xl p-6 md:p-12 border border-primary/10 mb-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="max-w-6xl mx-auto px-4 pb-20">
+        <div className="glass-card rounded-[2rem] p-6 md:p-10 mb-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             <PaymentSection />
+            <div className="hidden lg:block w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent absolute left-1/2 -translate-x-1/2" />
             <VerificationForm />
           </div>
         </div>

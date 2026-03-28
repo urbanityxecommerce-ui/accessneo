@@ -1,30 +1,29 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 210 12% 5%; /* #0B0D0E */
+    --background: 240 10% 2%; /* Deep Black */
     --foreground: 0 0% 98%;
-    --card: 210 12% 7%;
+    --card: 240 10% 4%;
     --card-foreground: 0 0% 98%;
-    --popover: 210 12% 5%;
+    --popover: 240 10% 2%;
     --popover-foreground: 0 0% 98%;
-    --primary: 211 89% 50%; /* #0D7CF2 Neon Blue */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 180 56% 70%; /* #89DEDE Cyan */
-    --secondary-foreground: 210 12% 5%;
-    --muted: 210 12% 15%;
-    --muted-foreground: 210 12% 70%;
-    --accent: 211 89% 50%;
-    --accent-foreground: 0 0% 100%;
+    --primary: 180 100% 50%; /* Electric Cyan */
+    --primary-foreground: 240 10% 2%;
+    --secondary: 280 100% 60%; /* Electric Purple */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 10% 12%;
+    --muted-foreground: 240 10% 70%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 240 10% 2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 12% 20%;
-    --input: 210 12% 20%;
-    --ring: 211 89% 50%;
-    --radius: 0.75rem;
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
+    --ring: 180 100% 50%;
+    --radius: 1rem;
   }
 }
 
@@ -33,15 +32,70 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased selection:bg-primary/30;
     background-image: 
-      radial-gradient(circle at 50% 0%, hsla(211, 89%, 50%, 0.15), transparent 50%),
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 30px 30px, 30px 30px;
+      radial-gradient(circle at 50% -20%, hsla(180, 100%, 50%, 0.15), transparent 70%),
+      radial-gradient(circle at 0% 100%, hsla(280, 100%, 60%, 0.1), transparent 50%);
   }
 }
 
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(180, 100, 50, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(180, 100, 50, 0.05) 1px, transparent 1px);
+}
+
+.glass-card {
+  @apply bg-card/40 backdrop-blur-xl border border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)];
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px hsla(180, 100%, 50%, 0.5), 0 0 20px hsla(180, 100%, 50%, 0.3);
+}
+
 .glitch-text {
-  text-shadow: 2px 0 hsla(211, 89%, 50%, 0.8), -2px 0 hsla(180, 56%, 70%, 0.8);
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  animation: glitch 500ms infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75),
+      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75),
+      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
 }
