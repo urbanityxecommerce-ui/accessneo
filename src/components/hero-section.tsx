@@ -16,7 +16,7 @@ export function HeroSection() {
       </h1>
       
       <p className="max-w-2xl text-muted-foreground text-base md:text-lg mb-10 leading-relaxed font-medium">
-        Access undocumented digital architecture and restricted bypasses. 
+        Access undocumented digital architecture and private network handshake protocols. 
         <span className="block mt-2 text-foreground font-black">
           ₹25 Monthly Access Fee <span className="text-primary">•</span> Private Channel Unlock
         </span>
@@ -33,7 +33,7 @@ export function HeroSection() {
         </div>
         <div className="flex items-center gap-2">
           <Lock className="w-4 h-4 text-primary" />
-          <span>Bypass Layer</span>
+          <span>Advanced Layer</span>
         </div>
       </div>
     </section>

@@ -6,23 +6,23 @@ export function FeaturesSection() {
   const features = [
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
-      title: "Exclusive Bypasses",
-      desc: "Get access to undocumented digital paths and restricted system bypasses that aren't available on the public web."
+      title: "Exclusive Handshakes",
+      desc: "Get access to undocumented digital paths and restricted system protocols that aren't available on the public web."
     },
     {
       icon: <ShieldAlert className="w-6 h-6 text-secondary" />,
-      title: "Shadow Protocols",
-      desc: "Private grey-hat strategies and deep-tech insights designed for those who operate in the hidden layers."
+      title: "Private Protocols",
+      desc: "Strategic grey-layer methodologies and deep-tech insights designed for those who operate in the hidden layers."
     },
     {
       icon: <Cpu className="w-6 h-6 text-primary" />,
       title: "Undocumented Logic",
-      desc: "Daily updates on system vulnerabilities and private handshake protocols for elite network access."
+      desc: "Daily updates on system architecture and private handshake protocols for elite network access."
     },
     {
       icon: <MessageSquareQuote className="w-6 h-6 text-secondary" />,
       title: "On-Demand Requests",
-      desc: "Need a specific trick, content, or a custom bypass? Protocol members can request specific solutions directly from the admins."
+      desc: "Need a specific trick, content, or custom protocol? Node members can request specific solutions directly from the admins."
     }
   ];
 
@@ -61,7 +61,7 @@ export function FeaturesSection() {
           [ SYSTEM NOTE ]
         </p>
         <p className="text-xs text-muted-foreground mt-2 italic">
-          "The protocol is dynamic. If you need a specific trick or content not currently listed, our admin node accepts custom requests from all active subscribers."
+          "The protocol is dynamic. If you need a specific trick or content not currently listed, our admin node accepts custom requests from all active members."
         </p>
       </div>
     </section>
