@@ -1,3 +1,10 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "upi-qr-placeholder",
+      "description": "UPI Payment QR Code placeholder",
+      "imageUrl": "https://picsum.photos/seed/67/400/400",
+      "imageHint": "qr code"
+    }
+  ]
 }
