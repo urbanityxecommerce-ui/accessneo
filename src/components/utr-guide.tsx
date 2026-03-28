@@ -1,29 +1,29 @@
-import { History, MousePointer2, Lock } from "lucide-react";
+import { History, Search, ClipboardCheck } from "lucide-react";
 
 export function UtrGuide() {
   const steps = [
     {
       icon: <History className="w-5 h-5 text-primary" />,
-      title: "Activity Log",
-      desc: "Check your transaction history for the ₹25 activation record."
+      title: "Open History",
+      desc: "Go to your UPI app's transaction history after paying ₹25."
     },
     {
-      icon: <MousePointer2 className="w-5 h-5 text-primary" />,
-      title: "Details",
-      desc: "Select the record to view the advanced transaction properties."
+      icon: <Search className="w-5 h-5 text-primary" />,
+      title: "Find Payment",
+      desc: "Tap on the successful ₹25 transaction to see the full details."
     },
     {
-      icon: <Lock className="w-5 h-5 text-primary" />,
-      title: "Extract Key",
-      desc: "Copy the 12-digit numeric key (UTR) required for node authentication."
+      icon: <ClipboardCheck className="w-5 h-5 text-primary" />,
+      title: "Copy UTR",
+      desc: "Find and copy the 12-digit number labeled as UTR or Ref No."
     }
   ];
 
   return (
     <section className="px-4 py-12 max-w-4xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-2xl font-headline font-bold mb-2">Activation Guide</h2>
-        <p className="text-muted-foreground">Follow these steps to synchronize your account with the network.</p>
+        <h2 className="text-2xl font-headline font-bold mb-2">How to Verify</h2>
+        <p className="text-muted-foreground">Follow these simple steps to join the private channel.</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">

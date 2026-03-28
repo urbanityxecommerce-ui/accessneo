@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ShieldCheck, Loader2, Key, ExternalLink } from "lucide-react";
+import { ShieldCheck, Loader2, CheckCircle2, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -20,8 +20,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { intelligentUtrVerification } from "@/ai/flows/intelligent-utr-verification";
 
 const formSchema = z.object({
-  username: z.string().min(3, "Alias must be at least 3 characters").startsWith("@", "Handle must start with @"),
-  utr: z.string().length(12, "Key must be exactly 12 digits").regex(/^\d+$/, "Key must only contain digits"),
+  username: z.string().min(3, "Username must be at least 3 characters").startsWith("@", "Username must start with @"),
+  utr: z.string().length(12, "UTR must be exactly 12 digits").regex(/^\d+$/, "UTR must only contain digits"),
 });
 
 export function VerificationForm() {
@@ -49,7 +49,7 @@ export function VerificationForm() {
 
       const botToken = "8341148373:AAGl9wHvC8znJwesCed04Anmm4rHrnHOcdo";
       const chatId = "8599229951";
-      const message = `📡 *New Network Activation Request*\n\n👤 *Alias:* ${values.username}\n🔑 *Key:* \`${values.utr}\`\n💸 *Status:* Pending Verification\n\n_Manual node approval required._`;
+      const message = `📡 *New Network Activation Request*\n\n👤 *Telegram:* ${values.username}\n🔑 *UTR:* \`${values.utr}\`\n💸 *Status:* Pending Verification\n\n_Manual approval required._`;
 
       const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: "POST",
@@ -68,7 +68,7 @@ export function VerificationForm() {
       }
     } catch (error) {
       console.error(error);
-      alert("Activation failed. Please check your network connection or contact support via Instagram.");
+      alert("Something went wrong. Please check your connection or contact support on Instagram.");
     } finally {
       setIsSubmitting(false);
     }
@@ -85,11 +85,11 @@ export function VerificationForm() {
             </div>
             <h2 className="text-3xl font-headline font-bold mb-4">VERIFIED</h2>
             <p className="text-muted-foreground mb-8">
-              Your credentials have been authenticated. You now have access to the private network channel.
+              Your payment has been submitted. You can now join the private Telegram channel.
             </p>
             <Button asChild size="lg" className="w-full font-bold h-14 text-lg shadow-lg shadow-primary/25">
               <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
-                ENTER CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
+                JOIN CHANNEL <ExternalLink className="ml-2 w-5 h-5" />
               </a>
             </Button>
           </CardContent>
@@ -103,8 +103,8 @@ export function VerificationForm() {
       <Card className="bg-card border-primary/20 shadow-xl overflow-hidden">
         <CardHeader className="bg-primary/5 border-b border-primary/10">
           <CardTitle className="text-xl font-headline font-bold flex items-center gap-2">
-            <Key className="w-5 h-5 text-primary" />
-            02. Authenticate Node
+            <CheckCircle2 className="w-5 h-5 text-primary" />
+            02. Submit Details
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -115,11 +115,11 @@ export function VerificationForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Identity Handle</FormLabel>
+                    <FormLabel>Telegram Username</FormLabel>
                     <FormControl>
-                      <Input placeholder="@your_handle" {...field} className="bg-background/50" />
+                      <Input placeholder="@your_username" {...field} className="bg-background/50" />
                     </FormControl>
-                    <FormDescription>The alias you will use on the network.</FormDescription>
+                    <FormDescription>Your username on Telegram for access.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -129,11 +129,11 @@ export function VerificationForm() {
                 name="utr"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>12-Digit Activation Key</FormLabel>
+                    <FormLabel>12-Digit UTR Number</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter 12 digits" maxLength={12} {...field} className="bg-background/50" />
                     </FormControl>
-                    <FormDescription>Located in your payment history details.</FormDescription>
+                    <FormDescription>Found in your UPI payment history details.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -146,10 +146,10 @@ export function VerificationForm() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    AUTHENTICATING...
+                    VERIFYING...
                   </>
                 ) : (
-                  "Request Activation"
+                  "Verify & Join Channel"
                 )}
               </Button>
             </form>
