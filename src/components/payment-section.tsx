@@ -26,8 +26,8 @@ export function PaymentSection() {
           01. PROTOCOL <span className="text-primary">FEE</span>
         </h2>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Contribution is required to generate your unique node access token. 
-          Use the address below to complete the transfer.
+          Pay ₹25 monthly to access all contents of the private channel. 
+          Use the address below to complete the handshake.
         </p>
       </div>
 
@@ -50,7 +50,7 @@ export function PaymentSection() {
             <span className="text-primary font-black text-lg">₹</span>
           </div>
           <div>
-            <p className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase mb-0.5">MINIMUM CONTRIBUTION</p>
+            <p className="text-[10px] text-muted-foreground font-bold tracking-widest uppercase mb-0.5">MONTHLY ACCESS FEE</p>
             <p className="text-xl font-headline font-black text-foreground">₹25.00</p>
           </div>
         </div>
