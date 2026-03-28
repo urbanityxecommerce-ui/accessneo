@@ -80,9 +80,9 @@ export function VerificationForm() {
           <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 shadow-[0_0_50px_rgba(0,255,255,0.1)]">
             <ShieldCheck className="w-12 h-12 text-primary" />
           </div>
-          <h2 className="text-4xl font-headline font-black mb-4 tracking-tighter uppercase neon-glow">VERIFIED</h2>
+          <h2 className="text-4xl font-headline font-black mb-4 tracking-tighter uppercase neon-glow">ACCESS GRANTED</h2>
           <p className="text-muted-foreground mb-10 leading-relaxed max-w-sm">
-            Payment details received. We are processing your access link now!
+            Request received. We are activating your access link now. Check the channel!
           </p>
           <Button asChild size="lg" className="w-full font-black h-16 text-lg tracking-widest shadow-[0_10px_40px_rgba(0,255,255,0.2)] hover:shadow-[0_15px_50px_rgba(0,255,255,0.3)] transition-all">
             <a href="https://t.me/+Fr2fbLG7n4YxNDE5" target="_blank" rel="noopener noreferrer">
@@ -101,10 +101,10 @@ export function VerificationForm() {
           <Terminal className="w-6 h-6 text-secondary" />
         </div>
         <h2 className="text-3xl font-headline font-black mb-3 tracking-tight uppercase">
-          STEP 02: <span className="text-secondary">SUBMIT</span>
+          STEP 02: <span className="text-secondary">ACTIVATE</span>
         </h2>
         <p className="text-muted-foreground text-sm">
-          Enter your Telegram username and the 12-digit UTR number from your payment.
+          Enter your Telegram username and the 12-digit UTR number to get your entry link.
         </p>
       </div>
 
@@ -131,7 +131,7 @@ export function VerificationForm() {
             name="utr"
             render={({ field }) => (
               <FormItem className="space-y-3">
-                <FormLabel className="text-[10px] text-primary font-black tracking-[0.3em] uppercase">12-Digit UTR Number</FormLabel>
+                <FormLabel className="text-[10px] text-primary font-black tracking-[0.3em] uppercase">12-Digit UTR / Transaction ID</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Input placeholder="Enter 12-digit number" maxLength={12} {...field} className="h-14 bg-white/5 border-white/10 font-mono pl-4 focus:bg-white/10 transition-all rounded-xl" />

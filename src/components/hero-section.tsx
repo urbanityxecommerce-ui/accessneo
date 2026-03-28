@@ -16,7 +16,7 @@ export function HeroSection() {
       </h1>
       
       <p className="max-w-2xl text-muted-foreground text-base md:text-lg mb-10 leading-relaxed font-medium">
-        Get access to <span className="text-foreground font-bold">secret mobile tricks</span>, hidden app settings, and private methods that no one else knows.
+        Get access to <span className="text-foreground font-bold">restricted mobile tricks</span>, hidden app settings, and private methods that stay away from the public eye.
         <span className="block mt-4 text-foreground font-black text-xl">
           ₹25 Monthly Entry Fee <span className="text-primary">•</span> Unlock VIP Content
         </span>
@@ -25,7 +25,7 @@ export function HeroSection() {
       <div className="flex flex-wrap justify-center items-center gap-8 text-[11px] text-muted-foreground font-bold tracking-widest uppercase">
         <div className="flex items-center gap-2">
           <Terminal className="w-4 h-4 text-primary" />
-          <span>Secret Tricks</span>
+          <span>Restricted Tricks</span>
         </div>
         <div className="flex items-center gap-2">
           <ShieldAlert className="w-4 h-4 text-secondary" />
