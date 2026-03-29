@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'SHADOW NODE | Private Access Protocol',
-  description: 'Connect to the restricted layer. Exclusive access to undocumented system architecture and private protocols.',
+  title: 'SHADOW NODE | VIP Access Protocol',
+  description: 'Get access to secret tricks, private earning methods, and hidden system guides. Join the restricted layer.',
 };
 
 export default function RootLayout({

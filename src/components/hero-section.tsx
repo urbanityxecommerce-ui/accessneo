@@ -1,4 +1,4 @@
-import { ShieldAlert, Terminal, Activity, Lock, BookOpen } from "lucide-react";
+import { ShieldAlert, Terminal, Activity, Lock, BookOpen, Star } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -7,7 +7,7 @@ export function HeroSection() {
       
       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold tracking-[0.2em] mb-8 animate-pulse">
         <Activity className="w-3 h-3" />
-        SECURE CONNECTION ESTABLISHED
+        SECURE VIP CONNECTION
       </div>
 
       <h1 className="text-5xl md:text-8xl font-headline font-black mb-6 tracking-tighter uppercase leading-none">
@@ -16,24 +16,24 @@ export function HeroSection() {
       </h1>
       
       <p className="max-w-2xl text-muted-foreground text-base md:text-lg mb-10 leading-relaxed font-medium">
-        Access <span className="text-foreground font-bold">Restricted System Protocols</span>, Private Data Layers, and Undocumented Methods.
+        Access <span className="text-foreground font-bold">Secret VIP Tricks</span>, Private Earning Methods, and Hidden System Guides.
         <span className="block mt-4 text-foreground font-black text-xl">
-          ₹25 Monthly Entry <span className="text-primary">•</span> VIP Restricted Layer
+          ₹25 Monthly Entry <span className="text-primary">•</span> VIP Secret Layer
         </span>
       </p>
 
       <div className="flex flex-wrap justify-center items-center gap-8 text-[11px] text-muted-foreground font-bold tracking-widest uppercase">
         <div className="flex items-center gap-2">
-          <Terminal className="w-4 h-4 text-primary" />
-          <span>Restricted Protocols</span>
+          <Star className="w-4 h-4 text-primary" />
+          <span>Secret Tricks</span>
         </div>
         <div className="flex items-center gap-2">
           <BookOpen className="w-4 h-4 text-secondary" />
-          <span>Private Assets</span>
+          <span>Private Guides</span>
         </div>
         <div className="flex items-center gap-2">
           <Lock className="w-4 h-4 text-primary" />
-          <span>Shadow Guides</span>
+          <span>Hidden Access</span>
         </div>
       </div>
     </section>

@@ -1,28 +1,28 @@
 "use client";
 
-import { Zap, ShieldAlert, Cpu, MessageSquareQuote, Book, Globe } from "lucide-react";
+import { Zap, ShieldAlert, Cpu, MessageSquareQuote, Book, Globe, Star, Sparkles, MessageCircle } from "lucide-react";
 
 export function FeaturesSection() {
   const features = [
     {
-      icon: <Zap className="w-6 h-6 text-primary" />,
-      title: "Restricted Protocols",
-      desc: "Exclusive methods and advanced techniques designed for those who want to stay ahead of the system."
+      icon: <Star className="w-6 h-6 text-primary" />,
+      title: "Secret Tricks",
+      desc: "Get special tricks and methods that you won't find anywhere else. Updated regularly."
     },
     {
-      icon: <Globe className="w-6 h-6 text-secondary" />,
-      title: "Hidden Infrastructure",
-      desc: "Daily updates on restricted information and private data streams from the undocumented layers."
+      icon: <Sparkles className="w-6 h-6 text-secondary" />,
+      title: "New Daily Updates",
+      desc: "We post new content and private guides every day to keep you ahead of everyone."
     },
     {
       icon: <Book className="w-6 h-6 text-primary" />,
-      title: "Private Assets",
-      desc: "Access our collection of restricted documentation covering advanced earnings and system methods."
+      title: "Earning Methods",
+      desc: "Access our collection of private guides on how to make money online with secret tricks."
     },
     {
-      icon: <MessageSquareQuote className="w-6 h-6 text-secondary" />,
+      icon: <MessageCircle className="w-6 h-6 text-secondary" />,
       title: "On-Demand Requests",
-      desc: "Need a specific method or restricted data? Members can directly request any protocol from admins."
+      desc: "Want a specific trick or method? Just ask us, and we will find it for you."
     }
   ];
 
@@ -30,10 +30,10 @@ export function FeaturesSection() {
     <section className="py-16 px-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-headline font-black mb-4 tracking-tight uppercase">
-          WHAT <span className="text-primary">YOU UNLOCK</span>
+          WHAT <span className="text-primary">YOU GET</span>
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto text-sm font-medium">
-          Enter the restricted layer. Get access to documentation that is never shared publicly.
+          Join the private layer. Get access to content that is never shared with the public.
         </p>
       </div>
 
@@ -61,7 +61,7 @@ export function FeaturesSection() {
           [ ACCESS GRANTED ]
         </p>
         <p className="text-xs text-muted-foreground mt-2 italic">
-          "New restricted protocols added daily. If you want a specific strategic method, send a request and we will source it."
+          "New secret tricks added daily. If you want a specific method, send a request and we will get it."
         </p>
       </div>
     </section>
