@@ -11,7 +11,7 @@ export function PaymentSection() {
   const copyUpi = () => {
     navigator.clipboard.writeText(upiId);
     toast({
-      description: "UPI Address copied successfully",
+      description: "Payment Address copied successfully",
     });
   };
 
@@ -25,7 +25,7 @@ export function PaymentSection() {
           STEP 01: <span className="text-primary">PAYMENT</span>
         </h2>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Pay <span className="text-foreground font-bold underline decoration-primary">₹25 Monthly</span> for full access to Grey Hat Tricks, Private Ebooks, and Restricted Methods.
+          Pay <span className="text-foreground font-bold underline decoration-primary">₹25 Monthly</span> for full access to all Restricted Protocols and Shadow Guides.
         </p>
       </div>
 

@@ -16,7 +16,7 @@ export function HeroSection() {
       </h1>
       
       <p className="max-w-2xl text-muted-foreground text-base md:text-lg mb-10 leading-relaxed font-medium">
-        Access <span className="text-foreground font-bold">Restricted Grey Hat Tricks</span>, Private Earnings Methods, and Hidden Deep Web Content.
+        Access <span className="text-foreground font-bold">Restricted System Protocols</span>, Private Data Layers, and Undocumented Methods.
         <span className="block mt-4 text-foreground font-black text-xl">
           ₹25 Monthly Entry <span className="text-primary">•</span> VIP Restricted Layer
         </span>
@@ -25,15 +25,15 @@ export function HeroSection() {
       <div className="flex flex-wrap justify-center items-center gap-8 text-[11px] text-muted-foreground font-bold tracking-widest uppercase">
         <div className="flex items-center gap-2">
           <Terminal className="w-4 h-4 text-primary" />
-          <span>Grey Hat Tricks</span>
+          <span>Restricted Protocols</span>
         </div>
         <div className="flex items-center gap-2">
           <BookOpen className="w-4 h-4 text-secondary" />
-          <span>Private Ebooks</span>
+          <span>Private Assets</span>
         </div>
         <div className="flex items-center gap-2">
           <Lock className="w-4 h-4 text-primary" />
-          <span>Deep Web Guides</span>
+          <span>Shadow Guides</span>
         </div>
       </div>
     </section>

@@ -6,23 +6,23 @@ export function FeaturesSection() {
   const features = [
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
-      title: "Grey Hat Tricks",
-      desc: "Exclusive methods and pro tricks designed for those who want to stay ahead of the game."
+      title: "Restricted Protocols",
+      desc: "Exclusive methods and advanced techniques designed for those who want to stay ahead of the system."
     },
     {
       icon: <Globe className="w-6 h-6 text-secondary" />,
-      title: "Deep Web Content",
-      desc: "Daily updates on restricted information and private data protocols from the hidden layer."
+      title: "Hidden Infrastructure",
+      desc: "Daily updates on restricted information and private data streams from the undocumented layers."
     },
     {
       icon: <Book className="w-6 h-6 text-primary" />,
-      title: "Private Ebooks",
-      desc: "Access our collection of private ebooks covering grey hat methods and advanced earnings."
+      title: "Private Assets",
+      desc: "Access our collection of restricted documentation covering advanced earnings and system methods."
     },
     {
       icon: <MessageSquareQuote className="w-6 h-6 text-secondary" />,
-      title: "Custom Requests",
-      desc: "Need a specific trick or restricted content? Members can directly request any method from admins."
+      title: "On-Demand Requests",
+      desc: "Need a specific method or restricted data? Members can directly request any protocol from admins."
     }
   ];
 
@@ -33,7 +33,7 @@ export function FeaturesSection() {
           WHAT <span className="text-primary">YOU UNLOCK</span>
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto text-sm font-medium">
-          Enter the restricted layer. Get access to content that is never shared publicly.
+          Enter the restricted layer. Get access to documentation that is never shared publicly.
         </p>
       </div>
 
@@ -61,7 +61,7 @@ export function FeaturesSection() {
           [ ACCESS GRANTED ]
         </p>
         <p className="text-xs text-muted-foreground mt-2 italic">
-          "New restricted protocols added daily. If you want a specific grey-hat trick or ebook, send a request and we will find it for you."
+          "New restricted protocols added daily. If you want a specific strategic method, send a request and we will source it."
         </p>
       </div>
     </section>
