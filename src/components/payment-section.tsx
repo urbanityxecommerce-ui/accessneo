@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export function PaymentSection() {
   const { toast } = useToast();
-  const upiId = "6205662185@mbk";
+  const upiId = "creativemind1716@okicici";
 
   const copyUpi = () => {
     navigator.clipboard.writeText(upiId);
